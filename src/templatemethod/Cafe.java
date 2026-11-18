@@ -5,11 +5,11 @@ public class Cafe extends Bebida {
 
     @Override
     protected void adicionarIngrediente() {
-        System.out.println("Passando o cafe...");
+        System.out.println("Adicionando pó de café...");
     }
 
     @Override
     protected void adicionarComplemento() {
-        System.out.println("Adicionando acucar ao cafe...");
+        System.out.println("Adicionando açúcar ao café...");
     }
 }
