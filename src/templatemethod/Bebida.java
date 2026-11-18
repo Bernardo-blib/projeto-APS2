@@ -17,7 +17,7 @@ public abstract class Bebida {
     protected abstract void adicionarIngrediente();
 
     private void colocarNaXicara() {
-        System.out.println("Colocando na xicara...");
+        System.out.println("Colocando na xícara...");
     }
 
     protected abstract void adicionarComplemento();
