@@ -2,13 +2,13 @@
 
 ## 📌 Sobre o projeto
 
-Este projeto foi desenvolvido em Java com o objetivo de demonstrar a aplicação do padrão de projeto comportamental Template Method.
+Este projeto foi desenvolvido em Java com o objetivo de demonstrar a aplicação do padrão de projeto comportamental **Template Method**, pertencente aos padrões GoF (Gang of Four).
 
-O sistema simula uma máquina automática de bebidas que prepara diferentes opções, como café e chá.
+O sistema simula o preparo de diferentes bebidas, como café e chá, utilizando uma estrutura padronizada para executar as etapas de preparação.
 
 ## 🎯 Objetivo
 
-Demonstrar como o padrão Template Method permite definir o esqueleto de um algoritmo em uma classe abstrata, delegando determinadas etapas específicas para serem implementadas pelas subclasses sem alterar a sequência geral do processo.
+Demonstrar como o padrão Template Method permite definir a estrutura de um algoritmo em uma classe abstrata, deixando determinadas etapas para serem implementadas pelas subclasses.
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -22,53 +22,50 @@ Demonstrar como o padrão Template Method permite definir o esqueleto de um algo
 ```text
 TemplateMethod/
 └── src/
-    └── templatemethod/
+    └── bebidas/
         ├── Bebida.java
         ├── Cafe.java
-        ├── Cappuccino.java
         ├── Cha.java
         └── Main.java
 ```
 
 ## ⚙️ Funcionamento
 
-O sistema possui uma classe abstrata chamada `Bebida`, responsável por definir a sequência fixa de preparação por meio do método `prepararBebida()` (marcado como `final`).
+O sistema possui uma classe abstrata chamada `Bebida`, responsável por definir a sequência de preparação.
 
-O método executa quatro etapas na seguinte ordem:
+O método `prepararBebida()` executa quatro etapas:
 
-1. `ferverAgua()` — Ferver a água (etapa comum definida na classe abstrata).
-2. `adicionarIngrediente()` — Adicionar o ingrediente principal (etapa abstrata implementada pelas subclasses).
-3. `colocarNaXicara()` — Colocar a bebida na xícara (etapa comum definida na classe abstrata).
-4. `adicionarComplemento()` — Adicionar o complemento específico (etapa abstrata implementada pelas subclasses).
+1. Ferver a água.
+2. Adicionar o ingrediente principal.
+3. Colocar a bebida na xícara.
+4. Adicionar os complementos.
 
-As classes `Cafe`, `Cha` e `Cappuccino` herdam de `Bebida` e implementam suas etapas específicas.
+As classes `Cafe` e `Cha` herdam de `Bebida` e implementam suas etapas específicas.
 
 ### Classes do projeto
 
-- `Bebida.java`: classe abstrata que contém o Template Method (`prepararBebida()`) e define a sequência imutável de preparação, além dos métodos comuns (`ferverAgua()` e `colocarNaXicara()`).
-- `Cafe.java`: implementa o preparo do café, adicionando o pó de café e o açúcar como complemento.
-- `Cha.java`: implementa o preparo do chá, colocando o chá em infusão e adicionando limão como complemento.
-- `Cappuccino.java`: implementa o preparo do cappuccino, preparando expresso com leite e adicionando canela e chocolate em pó como complemento.
-- `Main.java`: classe principal que apresenta um menu interativo via console (`Scanner`) para que o usuário escolha a bebida desejada em tempo de execução.
+**Bebida.java:** classe abstrata que contém o método Template Method e define a sequência de preparação.
+
+**Cafe.java:** implementa o preparo do café, incluindo seus ingredientes e complementos.
+
+**Cha.java:** implementa o preparo do chá, incluindo seus ingredientes e complementos.
+
+**Main.java:** classe principal responsável por executar e demonstrar o funcionamento do sistema.
 
 ## 💻 Exemplo de execução
 
 ```text
-=========================================
-      MAQUINA DE BEBIDAS AUTOMÁTICA      
-=========================================
-1 - Café
-2 - Chá
-3 - Cappuccino
-4 - Sair
-Escolha uma opcao: 3
-
-=== PREPARANDO CAPPUCCINO ===
-Fervendo a água...
-Preparando expresso com leite...
+=== PREPARANDO CAFE ===
+Fervendo a agua...
+Passando o cafe...
 Colocando na xicara...
-Adicionando canela e chocolate em pó...
-Bebida pronta! Sirva-se.
+Adicionando acucar e leite...
+
+=== PREPARANDO CHA ===
+Fervendo a agua...
+Colocando o saquinho de cha...
+Colocando na xicara...
+Adicionando limao...
 ```
 
 ## ▶️ Como executar
@@ -81,23 +78,27 @@ git clone https://github.com/Bernardo-blib/apsii.git
 
 2. Abra o Eclipse IDE.
 3. Importe o projeto Java.
-4. Localize a classe `Main.java` dentro do pacote `templatemethod`.
-5. Clique com o botão direito e selecione *Run As → Java Application*.
-6. Interaja com o menu no console digitando o número correspondente à bebida desejada.
+4. Localize a classe `Main.java` no pacote `bebidas`.
+5. Clique com o botão direito e selecione **Run As → Java Application**.
+6. Observe o resultado no console.
 
 ## 📚 Conceitos aplicados
 
 - Herança
 - Classes abstratas
 - Polimorfismo
-- Sobrescrita de métodos (`@Override`)
-- Encapsulamento e controle de fluxo (`final` e `private`)
-- Princípio Aberto/Fechado (OCP - SOLID)
+- Sobrescrita de métodos
 - Reutilização de código
 - Padrões de projeto comportamentais
 
 ## ✅ Conclusão
 
-O padrão Template Method facilita a reutilização de código, evita duplicações e garante a integridade da ordem de execução de algoritmos que compartilham etapas semelhantes.
+O padrão Template Method facilita a reutilização de código e a organização de algoritmos que possuem etapas semelhantes.
 
-Com a estrutura implementada, torna-se simples adicionar novas bebidas ao sistema (como o `Cappuccino`) apenas criando novas subclasses, sem a necessidade de modificar a classe base `Bebida`.
+Neste projeto, foi possível demonstrar como diferentes bebidas podem compartilhar uma mesma estrutura de preparação, mantendo suas implementações específicas.
+
+## 👥 Integrantes
+
+- Bernardo Mourthé
+- Davi Lucas
+- Jackson Fabiano
